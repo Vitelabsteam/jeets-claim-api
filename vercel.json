@@ -1,11 +1,6 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/*.ts", "use": "@vercel/node@2.16.1" }
-  ],
-  "routes": [
-    { "src": "/eligibility",  "dest": "/api/eligibility.ts" },
-    { "src": "/verify-tweet", "dest": "/api/verify-tweet.ts" },
-    { "src": "/submit-month", "dest": "/api/submit-month.ts" }
+    { "src": "api/*.js", "use": "@vercel/node" }
   ]
 }
