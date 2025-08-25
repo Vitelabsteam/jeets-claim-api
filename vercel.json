@@ -1,22 +1,11 @@
 {
   "version": 2,
   "functions": {
-    "api/*.ts": {
-      "runtime": "vercel-nodejs@4.0.0"
-    }
+    "api/*.ts": { "runtime": "nodejs20.x" }
   },
   "routes": [
-    {
-      "src": "/eligibility",
-      "dest": "/api/eligibility.ts"
-    },
-    {
-      "src": "/verify-tweet",
-      "dest": "/api/verify-tweet.ts"
-    },
-    {
-      "src": "/submit-month",
-      "dest": "/api/submit-month.ts"
-    }
+    { "src": "/eligibility",    "dest": "/api/eligibility.ts" },
+    { "src": "/verify-tweet",   "dest": "/api/verify-tweet.ts" },
+    { "src": "/submit-month",   "dest": "/api/submit-month.ts" }
   ]
 }
