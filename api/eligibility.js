@@ -1,4 +1,3 @@
-
 const { db } = require("./firebase.js");
 
 module.exports = async (req, res) => {
@@ -30,6 +29,6 @@ module.exports = async (req, res) => {
 };
 
 function makeNonce(pk) {
-  const short = pk.slice(0,4) + "…" + pk.slice(-4);
-  return `CLAIM-${short}-${(Math.random()*1e6|0).toString(36).toUpperCase()}`;
+  const short = pk.slice(0, 4) + "…" + pk.slice(-4);
+  return `CLAIM-${short}-${(Math.random() * 1e6 | 0).toString(36).toUpperCase()}`;
 }

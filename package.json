@@ -1,11 +1,9 @@
 {
   "name": "jeets-claim-api",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": true,
-  "type": "module",
   "engines": { "node": ">=18" },
   "dependencies": {
-    "firebase-admin": "^12.5.0",
-    "node-fetch": "^3.3.2"
+    "firebase-admin": "^12.5.0"
   }
 }

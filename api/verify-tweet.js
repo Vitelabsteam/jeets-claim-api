@@ -1,6 +1,4 @@
-
 const { db } = require("./firebase.js");
-const fetch = require("node-fetch");
 
 module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", process.env.ALLOW_ORIGIN || "https://jeets.ai");
@@ -12,7 +10,9 @@ module.exports = async (req, res) => {
     const { wallet, url, nonce } = req.body || {};
     if (!wallet || !url || !nonce) return res.json({ ok: false });
 
-    const html = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } }).then(r => r.text());
+    // Node 18+ has fetch built-in
+    const resp = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0" } });
+    const html = await resp.text();
     if (!html.includes(nonce)) return res.json({ ok: false });
 
     await db.doc(`wallets/${wallet}`).set({ actions: { tweet_verified: true } }, { merge: true });
