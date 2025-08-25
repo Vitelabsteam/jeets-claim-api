@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "functions": {
+    "api/*.ts": {
+      "runtime": "vercel-nodejs@4.0.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/eligibility",
+      "dest": "/api/eligibility.ts"
+    },
+    {
+      "src": "/verify-tweet",
+      "dest": "/api/verify-tweet.ts"
+    },
+    {
+      "src": "/submit-month",
+      "dest": "/api/submit-month.ts"
+    }
+  ]
+}
